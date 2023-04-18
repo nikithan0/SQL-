@@ -1,0 +1,42 @@
+USE salary_sheet2;
+CREATE TABLE employee_info(id int, name varchar(56), salary bigint, account_number bigint, city_name varchar(56));
+SELECT * FROM employee_info;
+ desc employee_info;
+ INSERT INTO employee_info VALUES(1024, 'Pallavi S', 500000, 108118998, 'Hosanagara');
+ INSERT INTO employee_info VALUES(1025, 'Ashwini H', 400000, 108116782, 'Udupi');
+ INSERT INTO employee_info VALUES(1026, 'Bhaagya', 100000, 109245780, 'Shivamoga');
+ INSERT INTO employee_info VALUES(1028, 'Nikitha', 500000, 108110116, 'Shivamoga');
+ INSERT INTO employee_info VALUES(1027, 'Swathi', 600000, 108737867, 'Hosanagara');
+ INSERT INTO employee_info VALUES(1037, 'Sowmya', 200000, 108982789, 'Davangere');
+ INSERT INTO employee_info VALUES(1010, 'Nandan', 100000, 100787876, 'Shirshi');
+ INSERT INTO employee_info VALUES(1020, 'Navya', 200000, 106787676, 'Thirthalli');
+ INSERT INTO employee_info VALUES(1029, 'Sindhu', 100000, 106789789, 'Manglore');
+ INSERT INTO employee_info VALUES(1030, 'Nithya', 200000, 108778356, 'Kundapura');
+ 
+SELECT * FROM employee_info;
+SELECT * FROM employee_info where id = 1024;
+SELECT * FROM employee_info where account_number = 109245780;
+SELECT * FROM employee_info where city_name = 'Manglore';
+SELECT * FROM employee_info where name = 'Nandan';
+SELECT * FROM employee_info where salary = 200000;
+SELECT id , city_name FROM employee_info where id =1028;
+SELECT city_name, salary FROM employee_info where name = 'Swathi';
+SELECT * FROM employee_info where account_number = 108110116 AND id = 1028;
+SELECT * FROM employee_info where id = 1028 AND name = 'Ashwini';
+SELECT * FROM employee_info where salary = 600000 AND city_name = 'Davangere';
+SELECT * FROM employee_info where name = 'Nithya' AND city_name = 'Kundapura';
+SELECT * FROM employee_info where account_number = 108982789 AND salary = 200000;
+SELECT * FROM employee_info where id = 1010 OR name = 'Nandan';
+SELECT * FROM employee_info where name = 'Navya' OR city_name = 'Thirthalli';
+SELECT * FROM employee_info where account_number = 108110116 OR city_name = 'Shivamoga';
+SELECT * FROM employee_info where name = 'Sindhu' OR salary = 200000;
+SELECT * FROM employee_info where id = 1024 OR name = 'Pallavi S';
+UPDATE employee_info set id = 4444 where name = 'Ashwini H';
+UPDATE employee_info set salary = 333333 where id = 4444;
+UPDATE employee_info set city_name = 'nnnnn' where id = 1037;
+UPDATE employee_info set name = 'yyyy' where salary = 200000;
+UPDATE employee_info set account_number = 1111111 where salary = 200000;
+DELETE FROM employee_info where id = 1029;
+DELETE FROM employee_info where id = 1010;
+
+
